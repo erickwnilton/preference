@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 class Person {
     String name;
-    static int age;
+    int age;
     String hometown;
 
 public Person(String name, int age, String hometown) {
@@ -40,8 +40,8 @@ public class preference {
                             System.out.println("Qual sua cidade: ");
                             String hometown = Data.next();
 
-                            Person preference = new Person(name, age, hometown);
-                            row.add(preference.toString());
+                            Person person = new Person(name, age, hometown);
+                            row.add(person.toString());
 
                             System.out.println("Você se tornou preferencial.");
 
@@ -51,7 +51,14 @@ public class preference {
                         break;
                     }
                     case 2 -> {
-
+                        if (row.isEmpty()) {
+                            System.out.println("Não há clientes preferenciais na lista.");
+                        } else {
+                            System.out.println("Lista de preferenciais:");
+                            for(String preferredName : row) {
+                                System.out.println(preferredName);
+                            }
+                        }
                         break;
                     }
                     case 3 -> {
