@@ -7,6 +7,11 @@ class Person {
     int age;
     String hometown;
 
+    @Override
+    public String toString() {
+        return "Nome: " + name + ", idade: " + age + ", cidade: " + hometown;
+    }
+
 public Person(String name, int age, String hometown) {
     this.name = name;
     this.age = age;
