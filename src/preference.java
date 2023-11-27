@@ -30,7 +30,24 @@ public class preference {
 
                 switch (readOption) {
                     case 1 -> {
+                        System.out.println("Qual seu nome:");
+                        String name = Data.next();
 
+                        System.out.println("Qual sua idade: ");
+                        int age = Data.nextInt();
+
+                        if(age >= 65) {
+                            System.out.println("Qual sua cidade: ");
+                            String hometown = Data.next();
+
+                            Person preference = new Person(name, age, hometown);
+                            row.add(preference.toString());
+
+                            System.out.println("Você se tornou preferencial.");
+
+                        } else {
+                            System.out.println("Apenas clientes com 65 anos ou mais são aceitos.");
+                        }
                         break;
                     }
                     case 2 -> {
