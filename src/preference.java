@@ -67,11 +67,31 @@ public class preference {
                         break;
                     }
                     case 3 -> {
+                        System.out.println("Digite o index para atualizar os dados do cliente: ");
+                        int UpdateIndex = Data.nextInt();
+
+                        if(UpdateIndex >= 0 && UpdateIndex < row.size()) {
+                            System.out.println("Digite seu nome: ");
+                            String newName = Data.next();
+
+                            System.out.println("Digite sua idade: ");
+                            int newAge = Data.nextInt();
+
+                            System.out.println("Digite sua cidade: ");
+                            String newHometown = Data.next();
+
+                            Person updatePerson = new Person(newName, newAge, newHometown);
+                            row.set(UpdateIndex, updatePerson.toString());
+
+                            System.out.println("Dados do cliente atualizado com sucesso.");
+                        } else {
+                            System.out.println("Índice inválido. Não foi possível atualizar os dados do cliente");
+                        }
 
                         break;
                     }
                     case 4 -> {
-                        System.out.println("Digite o index para remover os dados do cliente:");
+                        System.out.println("Digite o index para remover os dados do cliente: ");
                         int RemoveIndex = Data.nextInt();
 
                         row.remove(RemoveIndex);
