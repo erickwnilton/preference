@@ -21,7 +21,7 @@ public Person(String name, int age, String hometown) {
 
 public class preference {
         public static void main(String[] args) {
-            Queue<String> row = new LinkedList<>();
+            LinkedList<String> row = new LinkedList<>();
             Scanner Data = new Scanner(System.in);
 
             while (true) {
@@ -71,7 +71,11 @@ public class preference {
                         break;
                     }
                     case 4 -> {
+                        System.out.println("Digite o index para remover os dados do cliente:");
+                        int RemoveIndex = Data.nextInt();
 
+                        row.remove(RemoveIndex);
+                        System.out.println("Cliente removido com sucesso.");
                         break;
                     }
                     case 0 -> {
