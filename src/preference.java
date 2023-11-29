@@ -80,13 +80,17 @@ public class preference {
                                 System.out.println("Digite sua idade: ");
                                 int newAge = Data.nextInt();
 
-                                System.out.println("Digite sua cidade: ");
-                                String newHometown = Data.next();
+                                if(newAge >= 65) {
+                                    System.out.println("Digite sua cidade: ");
+                                    String newHometown = Data.next();
 
-                                Person updatePerson = new Person(newName, newAge, newHometown);
-                                row.set(UpdateIndex, updatePerson.toString());
+                                    Person updatePerson = new Person(newName, newAge, newHometown);
+                                    row.set(UpdateIndex, updatePerson.toString());
 
-                                System.out.println("Dados do cliente atualizado com sucesso.");
+                                    System.out.println("Dados do cliente atualizado com sucesso.");
+                                } else {
+                                    System.out.println("Apenas clientes com 65 anos ou mais são aceitos.");
+                                }
                             } else {
                                 System.out.println("Índice inválido. Não foi possível atualizar os dados do cliente");
                             }
